@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="schemaPage">
+        <h1>Table Schema Manager</h1>
+        <div class="controls">
+            <input type="text" id="schemaName" placeholder="Enter schema name">
+            <button onclick="createSchema()">Create New Schema</button>
+            <input type="text" id="searchSchema" placeholder="Search schemas..." onkeyup="filterSchemas()">
+        </div>
+        <div id="schemaList"></div>
+    </div>
+
+    <div id="tablePage" style="display: none;">
+        <h1 id="schemaTitle"></h1>
+        <div class="controls">
+            <button onclick="showSchemaPage()">Back to Schemas</button>
+            <input type="text" id="tableName" placeholder="Enter table name">
+            <button onclick="initTableCreation()">Create New Table</button>
+            <select id="tableSelector" onchange="loadTable()"></select>
+            <input type="text" id="searchTable" placeholder="Search tables..." onkeyup="filterTables()">
+        </div>
+        <div id="tableControls"></div>
+        <div id="tableContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
